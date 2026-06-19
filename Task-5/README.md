@@ -39,6 +39,7 @@ Status: inactive
 
 ```bash
 sudo apt install ufw -y
+sudo systemctl enable ufw
 ```
 
 ### Purpose
@@ -66,7 +67,8 @@ Remove previous firewall configurations and start with a clean configuration.
 ### Command
 
 ```bash
-sudo ufw allow from 13.206.222.31 to any port 22 proto tcp
+ubuntu@ip-172-31-0-50:~$ sudo ufw allow from 124.123.170.179 to any port 22 proto tcp
+Rules updated
 ```
 
 ### Purpose
@@ -78,20 +80,6 @@ Restrict SSH access to a specific IP address and prevent unauthorized remote acc
 ```bash
 sudo ufw status numbered
 ```
-
----
-
-## Step 4: Allow HTTP Traffic
-
-### Command
-
-```bash
-sudo ufw allow 80/tcp
-```
-
-### Purpose
-
-Allow incoming HTTP traffic on port 80.
 
 ---
 
@@ -141,14 +129,14 @@ sudo ufw status
 ### Output
 
 ```text
+
+root@ip-172-31-0-50:~# ufw status
 Status: active
 
 To                         Action      From
 --                         ------      ----
-22/tcp                     ALLOW       13.206.222.31
-80/tcp                     ALLOW       Anywhere
+22/tcp                     ALLOW       124.123.170.179
 8000/tcp                   ALLOW       Anywhere
-80/tcp (v6)                ALLOW       Anywhere (v6)
 8000/tcp (v6)              ALLOW       Anywhere (v6)
 ```
 
@@ -165,17 +153,18 @@ sudo ufw status verbose
 ### Output
 
 ```text
+root@ip-172-31-0-50:~# sudo ufw status verbose
 Status: active
 Logging: on (low)
 Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
 
 To                         Action      From
 --                         ------      ----
-22/tcp                     ALLOW IN    13.206.222.31
-80/tcp                     ALLOW IN    Anywhere
+22/tcp                     ALLOW IN    124.123.170.179
 8000/tcp                   ALLOW IN    Anywhere
-80/tcp (v6)                ALLOW IN    Anywhere (v6)
 8000/tcp (v6)              ALLOW IN    Anywhere (v6)
+
 ```
 
 ---
@@ -188,9 +177,9 @@ To                         Action      From
          ┌───────────┴───────────┐
          │                       │
          ▼                       ▼
- SSH Port 22               Ports 80 & 8000
+ SSH Port 22               Ports 8000
  Allowed from              Allowed from
- 13.206.222.31                Anywhere
+ 124.123.170.179                Anywhere
          │                       │
          └───────────┬───────────┘
                      ▼
