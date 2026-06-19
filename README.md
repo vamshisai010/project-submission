@@ -191,27 +191,26 @@ https://drive.google.com/file/d/1r6P_4Alrt6oT17-h-v9mIiEpoNzb1O4h/view?usp=shari
 
 # Screenshots
 
-## Task 1
+## SSH-keygen on WSL ubuntu
 
 ![SSH Key](screenshots/ssh-keygen.png)
 
-## Task 2
-
-![Docker Build and Containers Running](screenshots/docker-container.png)
+## Ec2 instance configuration
 
 ![Ec2-instance](screenshots/ec2-instance.png)
 
-## Task 3
+## Docker Build image and Running container
+
+![Docker Build and Containers Running](screenshots/docker-container.png)
+
+## Application successfully deployed
 
 ![Monitoring Script](screenshots/app-deployed.png)
 
-## Task 4
+## CRONJOB Script
 
-![User Permissions](screenshots/task4/permissions.png)
+![User Permissions](screenshots/cronjob-script.png)
 
-## Task 5
-
-![UFW Rules](screenshots/task5/ufw-status.png)
 ---
 
 # Final Outcome
@@ -242,5 +241,5 @@ Successfully implemented:
 
 **Gande Saivamshi**
 
-AWS DevOps Enthusiast
+AWS DevSecOps Enthusiast
 
