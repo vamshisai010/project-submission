@@ -106,11 +106,9 @@ docker images
 
 Output:
 
-```text
-ubuntu@ip-172-31-0-50:~$ sudo docker images
-                                                                                                                                        i Info →   U  In Use
+```text                                                                                                                                        i Info →   U  In Use
 IMAGE          ID             DISK USAGE   CONTENT SIZE   EXTRA
-index:latest   dccfb823116d        101MB         28.5MB    U
+index:latest   b82c822002e4        101MB         28.5MB    U
 nginx:alpine   d565d19ef132        102MB         29.4MB
 ```
 
@@ -133,9 +131,8 @@ docker ps
 Output:
 
 ```text
-ubuntu@ip-172-31-0-50:~$ sudo docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                                 NAMES
-30a086c8bd2d   index     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   80/tcp, 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   index
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                                 NAMES
+10893c1c5f8b   index     "/docker-entrypoint.…"   26 minutes ago   Up 26 minutes   80/tcp, 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   index
 ```
 
 ---
@@ -151,7 +148,7 @@ curl localhost:8000
 ### Browser Access
 
 ```text
-http://15.206.123.78:8000
+http://3.110.120.12:8000
 ```
 
 The application was successfully accessible through the browser.
