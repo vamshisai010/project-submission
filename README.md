@@ -57,8 +57,6 @@ Project-Submission/
 * Configured secure SSH access.
 * Verified passwordless authentication.
 
-**Status:** ✅ Completed
-
 ---
 
 ## Task 2: Docker Installation and Application Deployment
@@ -69,8 +67,6 @@ Project-Submission/
 * Built Docker image named `index`.
 * Deployed container named `index`.
 * Exposed the application on port `8000`.
-
-**Status:** ✅ Completed
 
 ---
 
@@ -87,8 +83,6 @@ Project-Submission/
 
 * Automated monitoring using Cron.
 
-**Status:** ✅ Completed
-
 ---
 
 ## Task 4: Secure Monitoring Logs Using a Dedicated User
@@ -97,8 +91,6 @@ Project-Submission/
 * Assigned ownership of `/opt/container-monitor`.
 * Restricted access to unauthorized users.
 * Verified Linux file permissions.
-
-**Status:** ✅ Completed
 
 ---
 
@@ -112,8 +104,6 @@ Configured UFW firewall rules:
 | 8000 | Application | Anywhere    |
 
 Enabled and verified firewall rules.
-
-**Status:** ✅ Completed
 
 ---
 
@@ -222,18 +212,6 @@ Successfully implemented:
 * Automated container monitoring with Cron.
 * Secure access control using Linux permissions.
 * Firewall configuration using UFW.
-
----
-
-# Assignment Status
-
-| Task   | Status      |
-| ------ | ----------- |
-| Task 1 | ✅ Completed |
-| Task 2 | ✅ Completed |
-| Task 3 | ✅ Completed |
-| Task 4 | ✅ Completed |
-| Task 5 | ✅ Completed |
 
 ---
 
