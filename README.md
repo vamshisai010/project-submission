@@ -189,8 +189,29 @@ https://drive.google.com/file/d/1r6P_4Alrt6oT17-h-v9mIiEpoNzb1O4h/view?usp=shari
 
 # Screenshots
 
-If screenshots are included, they can be placed inside a separate `screenshots/` directory and referenced from individual task README files.
+# Screenshots
 
+## Task 1
+
+![SSH Key](screenshots/ssh-key.png)
+
+## Task 2
+
+![Docker Build](screenshots/task2/docker-build.png)
+
+![Running Container](screenshots/task2/docker-ps.png)
+
+## Task 3
+
+![Monitoring Script](screenshots/task3/monitor-script.png)
+
+## Task 4
+
+![User Permissions](screenshots/task4/permissions.png)
+
+## Task 5
+
+![UFW Rules](screenshots/task5/ufw-status.png)
 ---
 
 # Final Outcome
