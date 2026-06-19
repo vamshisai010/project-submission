@@ -153,8 +153,6 @@ http://3.110.120.12:8000
 
 The application was successfully accessible through the browser.
 
-![App Screenshot](screenshots/app-deployed-on-browser.png)
-
 
 ## Container Architecture
 
