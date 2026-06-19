@@ -193,17 +193,17 @@ https://drive.google.com/file/d/1r6P_4Alrt6oT17-h-v9mIiEpoNzb1O4h/view?usp=shari
 
 ## Task 1
 
-![SSH Key](screenshots/ssh-key.png)
+![SSH Key](screenshots/ssh-keygen.png)
 
 ## Task 2
 
-![Docker Build](screenshots/task2/docker-build.png)
+![Docker Build and Containers Running](screenshots/docker-container.png)
 
-![Running Container](screenshots/task2/docker-ps.png)
+![Ec2-instance](screenshots/ec2-instance.png)
 
 ## Task 3
 
-![Monitoring Script](screenshots/task3/monitor-script.png)
+![Monitoring Script](screenshots/app-deployed.png)
 
 ## Task 4
 
