@@ -182,7 +182,7 @@ A demonstration video covering all tasks has been uploaded to Google Drive.
 ### Video Link
 
 ```text
-Paste your Google Drive link here
+https://drive.google.com/file/d/1r6P_4Alrt6oT17-h-v9mIiEpoNzb1O4h/view?usp=sharing
 ```
 
 ---
