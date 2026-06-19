@@ -109,7 +109,6 @@ Configured UFW firewall rules:
 | Port | Service     | Access      |
 | ---- | ----------- | ----------- |
 | 22   | SSH         | Specific IP |
-| 80   | HTTP        | Anywhere    |
 | 8000 | Application | Anywhere    |
 
 Enabled and verified firewall rules.
