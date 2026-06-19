@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME="web-container"
+CONTAINER_NAME="index"
 LOG_FILE="/opt/container-monitor/logs/container_usage.log"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
