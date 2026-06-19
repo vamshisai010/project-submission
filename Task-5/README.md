@@ -17,7 +17,7 @@ Configure the Uncomplicated Firewall (UFW) to secure the server by:
 * Application Port: 8000
 * HTTP Port: 80
 * SSH Port: 22
-* Allowed SSH Source IP: `13.206.222.31`
+* Allowed SSH Source IP: `103.143.168.150`
 
 ---
 
@@ -67,8 +67,7 @@ Remove previous firewall configurations and start with a clean configuration.
 ### Command
 
 ```bash
-ubuntu@ip-172-31-0-50:~$ sudo ufw allow from 124.123.170.179 to any port 22 proto tcp
-Rules updated
+sudo ufw allow from 103.143.168.150 to any port 22 proto tcp
 ```
 
 ### Purpose
@@ -129,14 +128,13 @@ sudo ufw status
 ### Output
 
 ```text
-
-root@ip-172-31-0-50:~# ufw status
+ubuntu@ip-172-31-0-220:~$ sudo ufw status
 Status: active
 
 To                         Action      From
 --                         ------      ----
-22/tcp                     ALLOW       124.123.170.179
 8000/tcp                   ALLOW       Anywhere
+22/tcp                     ALLOW       103.143.168.150
 8000/tcp (v6)              ALLOW       Anywhere (v6)
 ```
 
@@ -153,7 +151,7 @@ sudo ufw status verbose
 ### Output
 
 ```text
-root@ip-172-31-0-50:~# sudo ufw status verbose
+ubuntu@ip-172-31-0-220:~$ sudo ufw status verbose
 Status: active
 Logging: on (low)
 Default: deny (incoming), allow (outgoing), deny (routed)
@@ -161,10 +159,9 @@ New profiles: skip
 
 To                         Action      From
 --                         ------      ----
-22/tcp                     ALLOW IN    124.123.170.179
 8000/tcp                   ALLOW IN    Anywhere
+22/tcp                     ALLOW IN    103.143.168.150
 8000/tcp (v6)              ALLOW IN    Anywhere (v6)
-
 ```
 
 ---
@@ -179,7 +176,7 @@ To                         Action      From
          ▼                       ▼
  SSH Port 22               Ports 8000
  Allowed from              Allowed from
- 124.123.170.179                Anywhere
+ 103.143.168.150                Anywhere
          │                       │
          └───────────┬───────────┘
                      ▼
