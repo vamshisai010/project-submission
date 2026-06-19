@@ -98,13 +98,36 @@ Allow the script to be executed.
 cat /opt/container-monitor/logs/container_usage.log
 ```
 
-Example Output
+Output
 
 ```text
-root@ip-172-31-0-50:/opt/container-monitor/logs# /opt/container-monitor/logs/monitor.sh
-root@ip-172-31-0-50:/opt/container-monitor/logs# cat /opt/container-monitor/logs/container_usage.log
-2026-06-19 11:26:41 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:26:55 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
+root@ip-172-31-0-220:~# cat /opt/container-monitor/logs/container_usage.log
+2026-06-19 12:53:02 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:54:02 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:55:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:56:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:57:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:58:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 12:59:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:00:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:01:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:02:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:03:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:04:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:05:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:06:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:07:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:08:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:09:01 | Container: index | CPU: 0.00% | Memory: 3.316MiB / 908.7MiB
+2026-06-19 13:10:01 | Container: index | CPU: 0.00% | Memory: 3.34MiB / 908.7MiB
+2026-06-19 13:11:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:12:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:13:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:14:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:15:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:16:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:17:01 | Container: index | CPU: 0.00% | Memory: 3.836MiB / 908.7MiB
+2026-06-19 13:18:01 | Container: index | CPU: 0.00% | Memory: 3.348MiB / 908.7MiB
 ```
 
 ---
@@ -114,7 +137,9 @@ root@ip-172-31-0-50:/opt/container-monitor/logs# cat /opt/container-monitor/logs
 ### Edit Crontab
 
 ```bash
-root@ip-172-31-0-50:/opt/container-monitor/logs# crontab -e
+crontab -e
+
+output: 
 no crontab for root - using an empty one
 Select an editor.  To change later, run select-editor again.
   1. /bin/nano        <---- easiest
@@ -124,7 +149,6 @@ Select an editor.  To change later, run select-editor again.
 
 Choose 1-4 [1]: 1
 crontab: installing new crontab
-root@ip-172-31-0-50:/opt/container-monitor/logs#
 ```
 
 ### Add Entry
@@ -144,7 +168,7 @@ crontab -l
 Output
 
 ```text
-root@ip-172-31-0-50:/opt/container-monitor/logs# crontab -l
+root@ip-172-31-0-220:/opt/container-monitor/logs# crontab -l
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
@@ -169,7 +193,6 @@ root@ip-172-31-0-50:/opt/container-monitor/logs# crontab -l
 #
 # m h  dom mon dow   command
 * * * * * /opt/container-monitor/logs/monitor.sh
-root@ip-172-31-0-50:/opt/container-monitor/logs#
 
 ```
 
@@ -187,14 +210,20 @@ Execute the monitoring script automatically every minute.
 tail -f /opt/container-monitor/logs/container_usage.log
 ```
 
-Example Output
+Output
 
 ```text
-root@ip-172-31-0-50:/opt/container-monitor/logs# tail -f /opt/container-monitor/logs/container_usage.log
-2026-06-19 11:26:41 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:26:55 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:32:01 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:33:01 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
+root@ip-172-31-0-220:~# tail -f /opt/container-monitor/logs/container_usage.log
+2026-06-19 13:14:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:15:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:16:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:17:01 | Container: index | CPU: 0.00% | Memory: 3.836MiB / 908.7MiB
+2026-06-19 13:18:01 | Container: index | CPU: 0.00% | Memory: 3.348MiB / 908.7MiB
+2026-06-19 13:19:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:20:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:21:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:22:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
+2026-06-19 13:23:01 | Container: index | CPU: 0.00% | Memory: 3.336MiB / 908.7MiB
 ```
 
 ---
