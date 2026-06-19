@@ -41,7 +41,7 @@ sudo systemctl enable docker
 ### Verify Installation
 
 ```bash
-docker --version
+sudo docker --version
 ```
 
 ---
@@ -104,11 +104,14 @@ docker build -t index .
 docker images
 ```
 
-Example Output:
+Output:
 
 ```text
-REPOSITORY   TAG       IMAGE ID
-index        latest    xxxxxxxxx
+ubuntu@ip-172-31-0-50:~$ sudo docker images
+                                                                                                                                        i Info →   U  In Use
+IMAGE          ID             DISK USAGE   CONTENT SIZE   EXTRA
+index:latest   dccfb823116d        101MB         28.5MB    U
+nginx:alpine   d565d19ef132        102MB         29.4MB
 ```
 
 ---
@@ -127,11 +130,12 @@ docker run -d --name index -p 8000:8000 index
 docker ps
 ```
 
-Example Output:
+Output:
 
 ```text
-CONTAINER ID   IMAGE   PORTS
-xxxxxxxxxxxx   index   0.0.0.0:8000->8000/tcp
+ubuntu@ip-172-31-0-50:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                                 NAMES
+30a086c8bd2d   index     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   80/tcp, 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   index
 ```
 
 ---
@@ -147,34 +151,13 @@ curl localhost:8000
 ### Browser Access
 
 ```text
-http://<EC2-PUBLIC-IP>:8000
+http://15.206.123.78:8000
 ```
 
 The application was successfully accessible through the browser.
-[O
----
 
-## Files Used
+![App Screenshot](screenshots/app-deployed-on-browser.png)
 
-### Dockerfile
-
-```dockerfile
-FROM nginx:alpine
-
-COPY index.html /usr/share/nginx/html/index.html
-
-RUN sed -i 's/listen       80;/listen       8000;/g' /etc/nginx/conf.d/default.conf
-
-EXPOSE 8000
-
-CMD ["nginx", "-g", "daemon off;"]
-```
-
-### index.html
-
-Custom HTML page hosted inside the container.
-
----
 
 ## Container Architecture
 
