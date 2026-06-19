@@ -78,7 +78,7 @@ The EC2 instance was accessed directly from WSL Ubuntu.
 ### Command
 
 ```bash
-ssh ubuntu@<EC2-Public-IP>
+ssh ubuntu@3.110.120.12
 ```
 
 ### Purpose
@@ -92,7 +92,7 @@ Establish secure remote access using the locally generated private key.
 Successful login without password:
 
 ```bash
-ssh ubuntu@<EC2-Public-IP>
+ssh ubuntu@3.110.120.12
 ```
 
 Connection established successfully without requiring a password.
