@@ -38,14 +38,14 @@ id monitoruser
 Output
 
 ```text
-root@ip-172-31-0-50:~# sudo useradd -m monitoruser
-root@ip-172-31-0-50:~# sudo passwd monitoruser
+root@ip-172-31-0-220:~# sudo useradd -m monitoruser
+root@ip-172-31-0-220:~# sudo passwd monitoruser
 New password:
 Retype new password:
 passwd: password updated successfully
-root@ip-172-31-0-50:~# id monitoruser
+root@ip-172-31-0-220:~# id monitoruser
 uid=1001(monitoruser) gid=1001(monitoruser) groups=1001(monitoruser)
-root@ip-172-31-0-50:~#
+root@ip-172-31-0-220:~#
 ```
 
 ### Purpose
@@ -71,10 +71,10 @@ ls -ld /opt/container-monitor
 Output
 
 ```text
-root@ip-172-31-0-50:~# sudo chown -R monitoruser:monitoruser /opt/container-monitor
-root@ip-172-31-0-50:~# ls -ld /opt/container-monitor
+root@ip-172-31-0-220:~# sudo chown -R monitoruser:monitoruser /opt/container-monitor
+root@ip-172-31-0-220:~# ls -ld /opt/container-monitor
 drwxr-xr-x 3 monitoruser monitoruser 4096 Jun 19 11:22 /opt/container-monitor
-root@ip-172-31-0-50:~#
+root@ip-172-31-0-220:~#
 ```
 
 ### Purpose
@@ -103,18 +103,15 @@ ls -lR /opt/container-monitor
 Output
 
 ```text
-root@ip-172-31-0-50:~# ls -lR /opt/container-monitor
-
+root@ip-172-31-0-220:~# ls -lR /opt/container-monitor
 /opt/container-monitor:
 total 4
-drwx------ 2 monitoruser monitoruser 4096 Jun 19 11:26 logs
+drwx------ 2 monitoruser monitoruser 4096 Jun 19 12:53 logs
 
 /opt/container-monitor/logs:
 total 8
--rw------- 1 monitoruser monitoruser 1804 Jun 19 11:51 container_usage.log
--rwx------ 1 monitoruser monitoruser  448 Jun 19 11:24 monitor.sh
-
-root@ip-172-31-0-50:~#
+-rw------- 1 monitoruser monitoruser 2705 Jun 19 13:25 container_usage.log
+-rwx------ 1 monitoruser monitoruser  448 Jun 19 12:50 monitor.sh
 ```
 
 ### Purpose
@@ -136,16 +133,11 @@ su - monitoruser
 ### Access Monitoring Directory
 
 ```bash
-$ cd /opt/container-monitor/logs
-$ ls
+cd /opt/container-monitor/logs
+ls
 container_usage.log  monitor.sh
 
-$ cat container_usage.log
-2026-06-19 11:26:41 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:26:55 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:32:01 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:33:01 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
-2026-06-19 11:34:01 | Container: index | CPU: 0.00% | Memory: 3.371MiB / 908.7MiB
+cat container_usage.log
 ...
 ```
 
@@ -160,20 +152,13 @@ Successfully accessed the monitoring directory and log files.
 ### Create Test User
 
 ```bash
-$ sudo useradd -m testuser
-
-root@ip-172-31-0-50:~$ sudo passwd testuser
-New password:
-Retype new password:
-passwd: password updated successfully
+sudo useradd -m testuser
 ```
 
 ### Switch User
 
 ```bash
-root@ip-172-31-0-50:~$ su - testuser
-Password:
-$
+su - testuser
 ```
 
 ### Attempt Access
@@ -189,7 +174,7 @@ cd /opt/container-monitor
 
 also ubuntu user can't access
 
-ubuntu@ip-172-31-0-50:~$ cd /opt/container-monitor
+ubuntu@ip-172-31-0-220:~$ cd /opt/container-monitor
 -bash: cd: /opt/container-monitor: Permission denied
 ```
 
